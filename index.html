@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumzworld | Smart Voice Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <span class="mumz">mumz</span><span class="world">world</span>
+                <span class="badge">AI Lab</span>
+            </div>
+            <div class="header-controls">
+                <div class="language-switch">
+                    <button id="btn-en" class="active">EN</button>
+                    <button id="btn-ar">AR</button>
+                </div>
+                <button id="btn-theme-toggle" class="btn-icon">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="btn-voice-toggle" class="btn-icon">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="assistant-hero">
+                <h1>Hello, Mama! <span class="wave">👋</span></h1>
+                <p>Speak your needs. I'll handle the list.</p>
+                
+                <div class="action-buttons">
+                    <div class="voice-widget" id="voice-trigger">
+                        <div class="pulse-ring"></div>
+                        <div class="mic-icon">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                        <p class="status-text">Voice Note</p>
+                    </div>
+
+                    <div class="image-widget" id="image-trigger">
+                        <div class="image-icon">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                        <p class="status-text">Scan Image</p>
+                        <input type="file" id="image-input" accept="image/*" class="hidden">
+                    </div>
+                </div>
+            </section>
+
+            <div class="results-grid">
+                <!-- Shopping List -->
+                <section class="card shopping-card">
+                    <h2><i class="fa-solid fa-cart-shopping"></i> Shopping List</h2>
+                    <div id="shopping-list" class="list-container">
+                        <div class="empty-state">No items yet. Try saying "Need diapers tomorrow"</div>
+                    </div>
+                </section>
+
+                <!-- Calendar -->
+                <section class="card calendar-card">
+                    <h2><i class="fa-solid fa-calendar-check"></i> Reminders</h2>
+                    <div id="calendar-list" class="list-container">
+                        <div class="empty-state">No reminders set.</div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Ops Dashboard (The Twist) -->
+            <section class="card ops-card">
+                <h2><i class="fa-solid fa-chart-line"></i> MumzPulse <span class="badge">Ops View</span></h2>
+                <div id="ops-summary" class="ops-container">
+                    <p class="empty-state">Waiting for more data to detect trends...</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Recording Overlay (Glassmorphism) -->
+        <div id="recording-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <div class="recording-animation">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <h3 id="transcript">Listening...</h3>
+                <button id="stop-recording" class="btn-stop">Finish</button>
+            </div>
+        </div>
+
+        <!-- Evals Section -->
+        <section class="evals-section">
+            <button id="run-evals" class="btn-secondary">Run AI Evaluations</button>
+            <div id="eval-results" class="eval-log hidden"></div>
+        </section>
+
+        <div id="notification-toast" class="notification hidden">
+            <i class="fa-solid fa-circle-check"></i> <span id="notif-text">Success!</span>
+        </div>
+
+        <footer>
+            <p>© 2026 Mumzworld AI Prototype | Built for AI Engineering Internship</p>
+        </footer>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

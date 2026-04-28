@@ -1,0 +1,12 @@
+{
+  "name": "mumzworld-ai-concierge",
+  "version": "1.0.0",
+  "description": "AI-powered voice shopping assistant for Mumzworld",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "keywords": ["ai", "mumzworld", "shopping", "assistant"],
+  "author": "AI Intern Candidate",
+  "license": "MIT"
+}
